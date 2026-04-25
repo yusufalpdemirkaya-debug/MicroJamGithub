@@ -1,0 +1,119 @@
+:root {
+    --bg-dark: #171717;
+    --surface-dark: #242424;
+    --accent-green: #e5e5e5;
+    --text-main: #e5e5e5;
+    --text-muted: #a3a3a3;
+}
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: "UbuntuMono Nerd Font";
+    font-size: "125%";
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+header {
+    background-color: var(--surface-dark);
+    border-bottom: 2px solid var(--accent-green);
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-green);
+    font-family: 'UbuntuMono Nerd Font';
+}
+
+/* Layout */
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1, h2 {
+    color: var(--accent-green);
+    font-family: 'UbuntuMono Nerd Font';
+}
+
+/* Leaderboard Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--surface-dark);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+th {
+    background-color: var(--accent-green);
+    color: var(--bg-dark);
+    text-transform: uppercase;
+}
+
+/* Download Cards */
+section {
+    background-color: var(--surface-dark);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-green);
+}
+
+section a {
+    display: inline-block;
+    background-color: var(--accent-green);
+    color: var(--bg-dark);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: opacity 0.3s ease;
+}
+
+section a:hover {
+    opacity: 0.8;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+#atom-heart-ant img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centers the logo if needed */
+}

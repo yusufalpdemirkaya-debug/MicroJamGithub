@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atom Heart Ant - Leaderboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Fastest Ants (Leaderboard)</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Player Name</th>
+                    <th>Time (Minutes)</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+                <tr>
+                    <td colspan="3" style="text-align: center;">Loading fastest ants...</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>2026 Çapa Studio</p>
+    </footer>
+
+    <script>
+        async function fetchLeaderboard() {
+            const tableBody = document.getElementById('leaderboard-body');
+            const API_URL = '/stats';
+
+            try {
+                const response = await fetch(API_URL);
+                const data = await response.json();
+
+                // Helper to convert "MM:SS" to total seconds for accurate sorting
+                const toSeconds = (t) => {
+                    const [m, s] = t.split(':').map(Number);
+                    return (m * 60) + s;
+                };
+
+                // Sort by time ascending (fastest first)
+                data.sort((a, b) => toSeconds(a.time) - toSeconds(b.time));
+
+                // Build rows as a single string to minimize DOM reflows
+                const rows = data.map((player, index) => `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${player.username}</td>
+                        <td>${player.time}</td>
+                    </tr>
+                `).join('');
+
+                tableBody.innerHTML = rows;
+            } catch (error) {
+                tableBody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: #ff6b6b;">Error loading leaderboard data.</td></tr>';
+                console.error('Leaderboard Fetch Error:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchLeaderboard);
+        
+        // Refresh every 10 seconds for the live stand display
+        setInterval(fetchLeaderboard, 5000);
+    </script>
+</body>
+</html>
