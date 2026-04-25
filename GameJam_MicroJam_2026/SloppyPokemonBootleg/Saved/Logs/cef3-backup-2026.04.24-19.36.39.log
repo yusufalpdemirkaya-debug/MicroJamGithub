@@ -1,0 +1,50 @@
+[28496:26664:0424/110537.936:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
+[28496:8484:0424/110538.030:ERROR:google_update_settings.cc(265)] Failed opening key Software\Chromium to set usagestats; result: 5
+[28496:26664:0424/110538.075:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
+[19408:18332:0424/110549.682:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-176270F2743CCFE6706398ECC5963832 will be ignored
+[31380:12316:0424/120423.369:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/120423.374:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[31380:17336:0424/120423.519:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/120423.545:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[31380:17336:0424/120428.533:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/120428.547:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:26664:0424/120429.227:ERROR:device_event_log_impl.cc(196)] [12:04:29.110] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Eleman bulunamadı. (0x490)
+[31380:17336:0424/120539.987:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/120539.995:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[31380:17336:0424/120544.996:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/120544.998:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/120555.000:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[31380:17336:0424/120555.008:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/120615.003:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[31380:17336:0424/120615.026:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[31380:12316:0424/122245.881:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/122245.908:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/122250.928:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[31380:17336:0424/122250.931:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[31380:17336:0424/123820.992:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/123821.017:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:26664:0424/123822.409:ERROR:device_event_log_impl.cc(196)] [12:38:22.184] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Eleman bulunamadı. (0x490)
+[28496:26664:0424/125107.653:ERROR:device_event_log_impl.cc(196)] [12:51:07.629] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Eleman bulunamadı. (0x490)
+[28496:26664:0424/130107.944:ERROR:device_event_log_impl.cc(196)] [13:01:07.923] USB: usb_service_win.cc:308 SetupDiEnumDeviceInterfaces: Başka veri yok. (0x103)
+[28496:26664:0424/130107.985:ERROR:device_event_log_impl.cc(196)] [13:01:07.967] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Eleman bulunamadı. (0x490)
+[28496:19320:0424/131541.499:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[31380:17336:0424/131541.515:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:26664:0424/131544.738:ERROR:device_event_log_impl.cc(196)] [13:15:44.581] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Eleman bulunamadı. (0x490)
+[31380:17336:0424/131554.220:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:3548:0424/131554.231:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[31380:17336:0424/131559.227:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/131559.234:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/131609.237:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[31380:17336:0424/131609.239:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/131629.240:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[31380:17336:0424/131629.251:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[31380:17336:0424/134437.083:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/134437.084:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/134442.091:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[31380:17336:0424/134442.103:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/134452.094:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[31380:17336:0424/134452.123:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:19320:0424/134512.100:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[31380:17336:0424/134512.140:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[28496:26664:0424/152450.036:ERROR:device_event_log_impl.cc(196)] [15:24:49.751] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Eleman bulunamadı. (0x490)
+[28496:26664:0424/153612.421:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
