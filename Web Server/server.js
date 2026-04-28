@@ -1,18 +1,14 @@
 const express = require('express');
-const cors = require('cors');
-const crypto = require('crypto');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Security: Use a strong secret key. 
-// This MUST be the same key used inside your game's source code.
-const SECRET_KEY = 'DIH'; 
-
-app.use(cors());
+// Middleware to parse JSON bodies
 app.use(express.json());
 
+// Serve static files (HTML, CSS, JS, etc.) from the current directory
 // Serve static files (HTML, CSS, JS, etc.) from the current directory
 app.use(express.static(__dirname));
 
@@ -21,17 +17,21 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'main.html'));
 });
 
-// In-memory database for the project stand. 
-// For a permanent solution, you would use SQLite or MongoDB.
+// Persistent JSON database for the leaderboard.
+const LEADERBOARD_FILE = path.join(__dirname, 'leaderboard.json');
 let leaderboardData = [];
 
-/**
- * GET /stats
- * Used by the website to fetch the leaderboard.
- */
-app.get('/stats', (req, res) => {
-    res.json(leaderboardData);
-});
+// Load existing data on startup or initialize the file
+if (fs.existsSync(LEADERBOARD_FILE)) {
+    try {
+        const rawData = fs.readFileSync(LEADERBOARD_FILE, 'utf8');
+        leaderboardData = JSON.parse(rawData);
+    } catch (err) {
+        console.error('Error loading leaderboard file:', err);
+    }
+} else {
+    fs.writeFileSync(LEADERBOARD_FILE, JSON.stringify([], null, 2));
+}
 
 /**
  * POST /stats
@@ -40,32 +40,18 @@ app.get('/stats', (req, res) => {
 app.post('/stats', (req, res) => {
     const { username, time, timestamp, signature } = req.body;
 
-    // 1. Basic validation
-    if (!username || !time || !timestamp || !signature) {
+    // Basic validation for username and time
+    if (!username || !time) {
         return res.status(400).json({ error: 'Incomplete data.' });
     }
 
-    // 2. Anti-Replay Check: Reject requests older than 2 minutes
-    const now = Math.floor(Date.now() / 1000);
-    if (Math.abs(now - timestamp) > 120) {
-        return res.status(403).json({ error: 'Request expired. Check system clock.' });
-    }
-
-    // 3. Signature Verification (HMAC-SHA256)
-    // We recreate the signature using the data received and our secret key.
-    const message = `${username}${time}${timestamp}`;
-    const expectedSignature = crypto
-        .createHmac('sha256', SECRET_KEY)
-        .update(message)
-        .digest('hex');
-
-    if (signature !== expectedSignature) {
-        console.warn(`Unauthorized attempt from user: ${username}`);
-        return res.status(403).json({ error: 'Invalid signature. Access denied.' });
-    }
-
-    // 4. Data is valid. Save it.
+    // Data is valid. Save it.
     leaderboardData.push({ username, time });
+    // Persist data to the JSON file
+    fs.writeFile(LEADERBOARD_FILE, JSON.stringify(leaderboardData, null, 2), (err) => {
+        if (err) console.error('Error saving to leaderboard file:', err);
+    });
+
     console.log(`Score recorded: ${username} finished in ${time}`);
 
     res.status(201).json({ message: 'Success! Score recorded.' });

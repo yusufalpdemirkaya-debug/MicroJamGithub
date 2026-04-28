@@ -42,10 +42,12 @@
     <script>
         async function fetchLeaderboard() {
             const tableBody = document.getElementById('leaderboard-body');
-            const API_URL = '/stats';
+            const JSON_FILE = 'leaderboard.json';
 
             try {
-                const response = await fetch(API_URL);
+                // Fetch the JSON file directly. 
+                // We add a timestamp query parameter to bypass browser cache for the static file.
+                const response = await fetch(`${JSON_FILE}?t=${Date.now()}`);
                 const data = await response.json();
 
                 // Helper to convert "MM:SS" to total seconds for accurate sorting
